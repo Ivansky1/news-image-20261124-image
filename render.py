@@ -19,15 +19,15 @@ def f(path, size): return ImageFont.truetype(path, size)
 draw.rounded_rectangle((980, 695, 1238, 904), radius=14, fill=navy, outline=cream, width=4)
 draw.text((1004, 721), 'NASDAQ', font=f(sans_bold, 27), fill=cream)
 draw.text((1000, 757), '−1.5%', font=f(font_bold, 58), fill=white)
-draw.line((1005, 812, 1055, 798, 1103, 822, 1155, 833, 1214, 860), fill=red, width=8)
-draw.polygon([(1214, 860), (1187, 842), (1183, 869)], fill=red)
+draw.line((1005, 838, 1055, 834, 1103, 845, 1155, 850, 1214, 858), fill=red, width=8)
+draw.polygon([(1214, 858), (1187, 842), (1183, 868)], fill=red)
 draw.text((1003, 867), 'TUESDAY CLOSE', font=f(sans_bold, 17), fill=cream)
 
 # Replace the generated, decorative ticker digits with a truthful Dow callout.
-draw.rounded_rectangle((380, 626, 473, 751), radius=10, fill=navy, outline=cream, width=3)
-draw.text((388, 648), 'DOW', font=f(sans_bold, 18), fill=cream)
-draw.text((388, 680), '+0.9%', font=f(sans_bold, 25), fill=white)
-draw.text((388, 716), 'TUE', font=f(sans_bold, 15), fill=cream)
+draw.rounded_rectangle((468, 780, 604, 919), radius=10, fill=navy, outline=cream, width=3)
+draw.text((484, 800), 'DOW', font=f(sans_bold, 22), fill=cream)
+draw.text((484, 837), '+0.9%', font=f(sans_bold, 33), fill=white)
+draw.text((484, 883), 'TUESDAY', font=f(sans_bold, 16), fill=cream)
 
 # Date and headline in the reserved paper band.
 draw.text((62, 22), 'WORLD DESK  /  TUESDAY, 24 NOVEMBER 2026', font=f(sans_bold, 22), fill=teal)
@@ -50,4 +50,5 @@ for x, (head, sub, accent) in zip(cols, labels):
 im = im.resize((1024, 1024), Image.Resampling.LANCZOS)
 im.save(root / 'entry.png', 'JPEG', quality=86, optimize=True, progressive=True, subsampling=0)
 print('wrote', im.size, (root / 'entry.png').stat().st_size, 'bytes')
+
 
