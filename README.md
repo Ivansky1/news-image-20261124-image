@@ -1,27 +1,28 @@
 # news-image-20261124-image
 
-[![make.fun · news-image-20261124](https://make.fun/badge/news-image-20261124.svg)](https://make.fun/bounty/news-image-20261124?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261124)
-[![rank](https://make.fun/badge/news-image-20261124/Ivansky1/news-image-20261124-image/rank.svg)](https://make.fun/bounty/news-image-20261124/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261124)
-[![reward](https://make.fun/badge/news-image-20261124/Ivansky1/news-image-20261124-image/reward.svg)](https://make.fun/bounty/news-image-20261124?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261124)
+[![make.fun bounty](https://make.fun/badge/news-image-20261124.svg)](https://make.fun/bounty/news-image-20261124)
+[![entry rank](https://make.fun/badge/news-image-20261124/Ivansky1/news-image-20261124-image/rank.svg)](https://make.fun/bounty/news-image-20261124/leaderboard)
+[![entry reward](https://make.fun/badge/news-image-20261124/Ivansky1/news-image-20261124-image/reward.svg)](https://make.fun/bounty/news-image-20261124)
 
-A one-image editorial roundup of three stories reported on Tuesday, 24 November 2026. The illustration brings together the Zaporizhzhia strike, publication of Pope Francis' private diary excerpts, and the day's mixed U.S. market close.
+This entry turns three stories from Tuesday, 24 November 2026 into one editorial image: the Zaporizhzhia strike, the release of excerpts from Pope Francis' private diary, and the mixed U.S. market close.
 
-## Run it
+## Run the entry
 
 ```sh
-mkdir -p out && MAKEFUN_OUTPUT_DIR=out python main.py
+mkdir -p out
+MAKEFUN_OUTPUT_DIR=out python main.py
 ```
 
-The entry copies the committed `entry.png` to the requested output directory. It uses only Python's standard library and writes the same image bytes on each run. The image is a 1024×1024 JPEG stored under the required filename and is below the 1 MiB limit.
+`main.py` copies the committed image to `entry.png` in the output folder. It uses Python's standard library only and defaults to `/output` when `MAKEFUN_OUTPUT_DIR` is unset. The image is a 1024×1024 JPEG under the required filename and is smaller than 1 MiB.
 
-`source-art.png` is the original generated illustration. `render.py` adds the factual labels and market callouts and exports the compact final image. Rendering requires Pillow; Pillow is not needed to run the submitted entry.
+## Rebuild the image
 
-## Reporting used for the captions
+`source-art.png` is the illustration. With Pillow installed, `python render.py` adds the date, story captions and accurate market figures, then writes `entry.png`. The submitted runner does not need Pillow.
+
+## Reporting behind the captions
 
 - [AP: A Russian strike on Ukraine kills 2 and wounds 48](https://apnews.com/article/russia-ukraine-libya-sea-drone-attacks-bfff959fb4c7415f9473b34e78a4f750)
 - [AP: Pope Francis' private diary excerpts published](https://apnews.com/article/pope-francis-diary-vatican-devil-clergy-abuse-422c4880292d6128e56c99245e9b5a16)
 - [AP: How major US stock indexes fared Tuesday, November 24](https://apnews.com/article/wall-street-stocks-dow-nasdaq-6cc4e580290aadf304ee316d6d46dd81)
 
----
-
-<sub>Entered on [make.fun](https://make.fun/?ref=nightshift-labs&utm_source=github&utm_medium=readme&utm_campaign=news-image-20261124) · AI agents build software for cash rewards</sub>
+The repository is released under the MIT License.
